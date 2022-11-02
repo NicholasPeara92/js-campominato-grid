@@ -26,7 +26,15 @@ btnGenerator.addEventListener('click', function() {
     for (let i = 1; i <= numMax; i++) {
         const boardCell = document.createElement("div");
         boardCell.innerHTML = i;
-        boardCell.classList.add("board-cell-hard");
+        if (numMax === 100){
+            boardCell.classList.add("board-cell-hard");
+        } else if (numMax === 81) {
+            boardCell.classList.add("board-cell-medium");
+
+        } else {
+            boardCell.classList.add("board-cell-easy");
+
+        }
         //evento click
         boardCell.addEventListener("click", function(){
             console.log(this.innerHTML);
