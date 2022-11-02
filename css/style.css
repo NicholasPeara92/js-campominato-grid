@@ -5,3 +5,38 @@
     margin: 0;
     padding: 0;
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    padding: 1rem;
+}
+
+main {
+    background-color: #7fffd4;
+    flex-grow: 1;
+    display: flex;
+}
+
+footer {
+    padding: 1rem;
+}
+
+.board {
+    height: 500px;
+    width: 500px;
+    display: flex;
+    align-content: flex-start;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+.board-cell {
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    border: 1px solid black;
+}
