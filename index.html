@@ -10,10 +10,18 @@
 <body>
     <header>
         <h1>Campo Minato</h1>
+        <div class="box">
+            <label for="diff">Difficoltà</label>
+            <select name="difficulty" id="diff">
+                <option value="easy">facile</option>
+                <option value="medium">medio</option>
+                <option value="hard">difficile</option>
+            </select>
+            <button class="btn-generator" type="button">Genera</button>      
+        </div>
     </header>
     <main>
-        <div class="board">
-        </div>
+        <div class="board"></div>
     </main>
     <footer>
         <div>Made with &hearts; by Boolean</div>

@@ -8,3 +8,55 @@
 // - con difficoltà 1 => 100 caselle, con un numero compreso tra 1 e 100, divise in 10 caselle per 10 righe;
 // - con difficoltà 2 => 81 caselle, con un numero compreso tra 1 e 81, divise in 9 caselle per 9 righe;
 // - con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 caselle per 7 righe;
+
+// seleziono il contenitore
+
+
+const btnGenerator = document.querySelector(".btn-generator");
+
+btnGenerator.addEventListener('click', function() {
+    let diff = document.getElementById("diff").value;
+    const boardContainer = document.querySelector(".board");
+    
+    if (diff === "hard") {
+        
+        boardContainer.innerHTML = "";
+        for (let i = 1; i <= 100; i++) {
+            const boardCell = document.createElement("div");
+            boardCell.innerHTML = i;
+            boardCell.classList.add("board-cell-hard");
+            //evento click
+            boardCell.addEventListener("click", function(){
+                console.log(this.innerHTML);
+                this.classList.toggle("clicked");
+            });
+            boardContainer.append(boardCell);
+        }
+    } else if (diff === "medium") {
+        boardContainer.innerHTML = "";
+        for (let i = 1; i <= 81; i++) {
+            const boardCell = document.createElement("div");
+            boardCell.innerHTML = i;
+            boardCell.classList.add("board-cell-medium");
+            //evento click
+            boardCell.addEventListener("click", function(){
+                console.log(this.innerHTML);
+                this.classList.toggle("clicked");
+            });
+            boardContainer.append(boardCell);
+        }
+    } else {
+        boardContainer.innerHTML = "";
+        for (let i = 1; i <= 49; i++) {
+            const boardCell = document.createElement("div");
+            boardCell.innerHTML = i;
+            boardCell.classList.add("board-cell-easy");
+            //evento click
+            boardCell.addEventListener("click", function(){
+                console.log(this.innerHTML);
+                this.classList.toggle("clicked");
+            });
+            boardContainer.append(boardCell);
+        }
+    }
+});
